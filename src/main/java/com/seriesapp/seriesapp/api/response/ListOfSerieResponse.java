@@ -1,7 +1,7 @@
-package com.seriesapp.seriesapp.responses;
+package com.seriesapp.seriesapp.api.response;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.seriesapp.seriesapp.models.Serie;
+import com.seriesapp.seriesapp.domain.model.Serie;
 
 import java.util.List;
 

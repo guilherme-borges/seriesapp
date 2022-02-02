@@ -1,7 +1,7 @@
-package com.seriesapp.seriesapp.controllers;
+package com.seriesapp.seriesapp.api.controller;
 
-import com.seriesapp.seriesapp.responses.ListOfSerieResponse;
-import com.seriesapp.seriesapp.services.SerieService;
+import com.seriesapp.seriesapp.api.response.ListOfSerieResponse;
+import com.seriesapp.seriesapp.domain.service.SerieService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
