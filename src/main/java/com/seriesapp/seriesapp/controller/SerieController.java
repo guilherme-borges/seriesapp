@@ -18,14 +18,14 @@ public class SerieController {
     private SerieService serieService;
 
     @GetMapping
-    public ResponseEntity<ListOfSerieResponse> getAllSeries() {
+    public ResponseEntity<ListOfSerieResponse> findAllSeries() {
 
-        return ResponseEntity.ok(serieService.getAllSeries());
+        return ResponseEntity.ok(serieService.findAllSeries());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Serie> getSerie(@PathVariable Long id) {
+    public ResponseEntity<Serie> findSerieById(@PathVariable Long id) {
 
-        return ResponseEntity.ok(serieService.getSerie(id));
+        return ResponseEntity.ok(serieService.findSerie(id));
     }
 }

@@ -25,7 +25,7 @@ public class SerieService {
     @Value("${tmdb_api_key}")
     public String tmdb_api_key;
 
-    public ListOfSerieResponse getAllSeries() {
+    public ListOfSerieResponse findAllSeries() {
         return webClient
                 .method(HttpMethod.GET)
                 .uri("/tv/popular?api_key=" + tmdb_api_key + "&language=pt-BR&page=1")
@@ -33,13 +33,13 @@ public class SerieService {
                 .bodyToFlux(ListOfSerieResponse.class).blockFirst();
     }
 
-    public Serie getSerie(Long id) {
+    public Serie findSerie(Long id) {
         Serie serie = serieRepository.findById(id)
-                        .orElse(save(getAPISerie(id)));
+                        .orElse(save(findAPISerie(id)));
         return serie;
     }
 
-    public Serie getAPISerie(Long id) {
+    public Serie findAPISerie(Long id) {
         return webClient
                 .method(HttpMethod.GET)
                 .uri("/tv/"+ id +"?api_key=" + tmdb_api_key + "&language=pt-BR")
